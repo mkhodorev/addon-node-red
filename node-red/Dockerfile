@@ -2,6 +2,8 @@ ARG BUILD_FROM=hassioaddons/base:6.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
+ENV NODE_OPTIONS="--max_old_space_size=128"
+
 # Copy Node-RED package.json
 COPY package.json requirements.txt /opt/
 
